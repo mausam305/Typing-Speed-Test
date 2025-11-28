@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="screen active">
+            <div class="welcome-content">
+                <h1>🚀 Typing Speed Test</h1>
+                <p>Test your typing speed and accuracy!</p>
+                <div class="input-group">
+                    <input type="text" id="userNameInput" placeholder="Enter your name" maxlength="50">
+                    <button id="startBtn" type="button" class="btn btn-primary">Start</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Menu Screen -->
+        <div id="menuScreen" class="screen">
+            <div class="menu-content">
+                <h2>Welcome, <span id="userNameDisplay"></span>!</h2>
+                <div class="menu-buttons">
+                    <button id="newTestBtn" class="btn btn-primary">Start New Test</button>
+                    <button id="myHistoryBtn" class="btn btn-secondary">View My History</button>
+                    <button id="allHistoryBtn" class="btn btn-secondary">View All History</button>
+                    <button id="exitBtn" class="btn btn-danger">Exit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Difficulty Selection Screen -->
+        <div id="difficultyScreen" class="screen">
+            <div class="difficulty-content">
+                <h2>Select Difficulty Level</h2>
+                <div class="difficulty-buttons">
+                    <button class="btn btn-difficulty" data-difficulty="Easy">
+                        <span class="difficulty-title">Easy</span>
+                        <span class="difficulty-desc">Short simple sentences</span>
+                    </button>
+                    <button class="" data-difficulty="Medium">
+                        <span class="difficulty-title">Medium</span>
+                        <span class="difficulty-desc">Moderate length sentences</span>
+                    </button>
+                    <button class="btn btn-difficulty" data-difficulty="Hard">
+                        <span class="difficulty-title">Hard</span>
+                        <span class="difficulty-desc">Complex long sentences</span>
+                    </button>
+                </div>
+                <button id="backToMenuBtn" class="btn btn-secondary">Back to Menu</button>
+            </div>
+        </div>
+
+        <!-- Test Screen -->
+        <div id="testScreen" class="screen">
+            <div class="test-content">
+                <div class="test-header">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-label">WPM</span>
+                            <span id="wpmDisplay" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">SPM</span>
+                            <span id="spmDisplay" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Accuracy</span>
+                            <span id="accuracyDisplay" class="stat-value">100%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Time</span>
+                            <span id="timeDisplay" class="stat-value">0s</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="test-body">
+                    <div class="sentence-info">
+                        <span id="sentenceCounter">Sentence 1 of 5</span>
+                    </div>
+                    <div id="textDisplay" class="text-display"></div>
+                    <div class="input-area">
+                        <textarea id="typingInput" placeholder="Start typing here..." rows="4" disabled></textarea>
+                    </div>
+                    <div class="test-controls">
+                        <button id="resetTestBtn" type="button" class="btn btn-secondary">Reset</button>
+                        <button id="finishTestBtn" type="button" class="btn btn-primary">Finish Test</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-content">
+                <h2>Test Summary</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-label">User Name</span>
+                        <span id="resultUserName" class="result-value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Difficulty</span>
+                        <span id="resultDifficulty" class="result-value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">WPM</span>
+                        <span id="resultWPM" class="result-value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">SPM</span>
+                        <span id="resultSPM" class="result-value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Accuracy</span>
+                        <span id="resultAccuracy" class="result-value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Date & Time</span>
+                        <span id="resultDateTime" class="result-value"></span>
+                    </div>
+                </div>
+                <div id="motivationalMessage" class="motivational-message"></div>
+                <div class="results-buttons">
+                    <button id="newTestFromResultsBtn" class="btn btn-primary">New Test</button>
+                    <button id="menuFromResultsBtn" class="btn btn-secondary">Back to Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Screen -->
+        <div id="historyScreen" class="screen">
+            <div class="history-content">
+                <h2 id="historyTitle">Test History</h2>
+                <div id="historyList" class="history-list"></div>
+                <button id="backFromHistoryBtn" class="btn btn-secondary">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
